@@ -68,3 +68,34 @@ là 1 class trả về các sản phẩm của 1 họ cụ thể.
 ![](./UML_images/Factory_method.png)
 
 ### Builder 
+- Cho phép bạn xây dựng các đối tượng phức tạp bằng cách sử dụng các đối tượng đơn giản và sử dụng tiếp cận từng bước. Builder Pattern còn cho phép bạn tạo ra các kiểu thể hiện khác nhau của một đối tượng bằng cách sử dụng cùng một constructor code.
+
+***Triển khai***
+- Builder interface khai báo trước các bước product construction chung cho tất cả các loại builder.
+- Concrete Builder(TruckBuilder, CarBuilder): cung cấp các cách triển khai khác nhau của các bước construction cho Builder. Các concrete builder có thể tạo ra các product không tuân theo giao diện chung.
+- Director: Lớp Director xác định thứ tự gọi các bước construction, vì vậy bạn có thể tạo và sử dụng lại các cấu hình cụ thể của product.
+
+![](./UML_images/Builder.png)
+
+## Structual(Nhóm cấu trúc)
+### Facade
+- Facade Pattern cung cấp cho chúng ta một giao diện chung đơn giản thay cho một nhóm các giao diện có trong một hệ thống con (subsystem). Facade Pattern định nghĩa một giao diện ở cấp độ cao hơn để giúp cho người dùng có thể dễ dàng sử dụng hệ thống con này.
+- Facade Pattern cho phép các đối tượng truy cập trực tiếp giao diện chung này để giao tiếp với các giao diện có trong hệ thống con. Mục tiêu là che giấu các hoạt động phức tạp bên trong hệ thống con, làm cho hệ thống con dễ sử dụng hơn.
+
+***Triển khai***
+- Facade: Facade nắm rõ được hệ thống con nào đảm nhiệm việc đáp ứng yêu cầu của client, nó sẽ chuyển yêu cầu của client đến các đối tượng hệ thống con tương ứng.
+- Addition Facade: có thể được tạo ra để tránh việc làm phức tạp một facade. Có thể được sử dụng bởi cả client và facade.
+
+![](./UML_images/Facade.png)
+
+## Behavioral(Nhóm hành vi)
+### Observer
+- Định nghĩa mối phụ thuộc một - nhiều giữa các đối tượng để khi mà một đối tượng có sự thay đổi trạng thái, tất cả các thành phần phụ thuộc của nó sẽ được thông báo và cập nhật một cách tự động.
+- Một đối tượng có thể thông báo đến một số lượng không giới hạn các đối tượng khác.
+
+***Triển khai***
+- Publisher (EventManager) là lớp cần lắng nghe. Khi có sự kiện, Publisher sẽ thông báo cho Subscriber (EventListener).
+- Khi một sự kiện mới xảy ra, publisher xem qua danh sách đăng ký và gọi phương thức thông báo được khai báo trong subsrciber interface trên từng subscriber object.
+- Subscriber là interface để Publisher báo cáo mỗi khi có sự kiện.
+
+![](./UML_images/Observer.png)

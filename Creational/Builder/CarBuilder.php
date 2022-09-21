@@ -1,7 +1,7 @@
 <?php
 class CarBuilder implements Builder
 {
-    private $truck;
+    private $car;
 
     public function addDoors(): void
     {
